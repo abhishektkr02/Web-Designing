@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER</title>
+</head>
+<style>
+    body
+    {
+        font-family: 'Times New Roman';
+        margin: 0px;
+        padding: 0px;
+        background-color: white;
+    }
+    .container
+    {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: aqua;
+        box-decoration-break: 0 0 10px black;
+        border-radius: 6px;
+    }
+    #order-form
+    {
+        text-align: center;
+    }
+    form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    label
+    {
+        margin-bottom: 60px;
+        font-weight: bold;
+        color: grey;
+    }
+    input,select,textarea
+    {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid purple;
+        border-radius: 4px;
+    }
+    button
+    {
+        background-color: brown;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    button:hover
+    {
+        background-color: green;
+    }
+    .button-container
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    #total-amount-container
+    {
+        font-weight: bold;
+        color: grey;
+        margin-bottom: 10px;
+    }
+    #payment-method
+    {
+        margin-bottom: 16px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div id="order-form">
+            <h2><b>PLACE YOUR ORDER</b></h2>
+            <form id="food-order-form">
+                <label for="name">NAME :</label>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                <label for="phone">PHONE NUMBER :</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                <label for="food-item">SELECT FOOD ITEM</label>
+                <select id="food-item" name="food-item">
+                    <option value="item">CHOOSE YOUR ITEM</option>
+                    <option value="burger">BURGER</option>
+                    <option value="pizza">PIZZA</option>
+                    <option value="pasta">PASTA</option>
+                </select>
+                <label for="quantity">QUANTITY :</label>
+                <input type="number" id="quantity" name="quantity" required>
+                <label for="total-amount">TOTAL AMOUNT :</label>
+                <div id="total-amount-container">Total Amount : $0.00</div>
+                <label for="delivery-address">DELIVERY ADDRESS :</label>
+                <textarea id="delivery-address" name="delivery-address" rows="4" placeholder="Enter Your Delivery Address" required></textarea>
+                <label for="payment-method">PAYMENT METHOD</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="item">CHOOSE YOUR ITEM</option>
+                    <option value="credit-card">CREDIT CARD</option>
+                    <option value="paypal">PAYPAL</option>
+                    <option value="cash">CASH ON DELIVERY</option>
+                </select>
+                <div class="button-container">
+                    <button type="button" onclick="calculateTotalBill()">Calculate Total Bill</button>
+                    <button type="button" onclick="clearForm()">Clear</button>
+                    <button type="button" onclick="placeOrder()">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function calculateTotalBill()
+        {
+            const foodItem=document.getElementById("food-item").value;
+            const quantity=parseInt(document.getElementById("quantity").value);
+
+            if(!foodItem || !quantity)
+            {
+                alert("Please Select A Food Item And Enter A Quantity");
+                return;
+            }
+
+            const pricePerItem=getpricePerItem(foodItem);
+            const totalAmount=calculateTotalAmount(quantity,pricePerItem);
+            document.getElementById("total-amount-container").innerHTML="Total Amount : $"+totalAmount.toFixed(2);
+        }
+        function placeOrder()
+        {
+            const name=document.getElementById("name").value;
+            const phone=document.getElementById("phone").value;
+            const foodItem=document.getElementById("food-item").value;
+            const quantity=document.getElementById("quantity").value;
+            const deliveryAddress=document.getElementById("delivery-address").value;
+            const paymentMethod=document.getElementById("payment-method").value;
+
+            if(!name || !phone ||!foodItem ||!quantity ||!deliveryAddress ||!paymentMethod)
+            {
+                alert("Please Fill In All The Required Fields");
+                return;
+            }
+
+            const pricePerItem=getpricePerItem(foodItem);
+            const totalAmount=calculateTotalAmount(quantity,pricePerItem);
+
+            document.getElementById("total-amount-container").innerHTML="Total Amount : $"+totalAmount.toFixed(2);
+
+            alert("Order Placed Successfull\\nTotal Amount : $"+totalAmount.toFixed(2)+ "\\nThank You For Purchasing")
+            clearForm();
+        }
+        function getpricePerItem(foodItem)
+        {
+            const prices=
+            {
+                burger:120,
+                pizza:300,
+                pasta:250
+            };
+            return prices[foodItem] || 0;
+        }
+        function calculateTotalAmount(quantity,pricePerItem)
+        {
+            return quantity*pricePerItem;
+        }
+        function clearForm()
+        {
+            document.getElementById("name").value="";
+            document.getElementById("phone").value="";
+            document.getElementById("food-item").value="CHOOSE YOUR ITEM";
+            document.getElementById("quantity").value="";
+            document.getElementById("delivery-address").value="";
+            document.getElementById("payment-method").value="CREDIT CARD";
+            document.getElementById("total-amount-container").innerHTML="Total Amount : $0.00";
+        }
+    </script>
+</body>
+</html>

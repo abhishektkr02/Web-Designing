@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEDBACK</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<style>
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    body
+    {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: auto;
+        font-family: 'Times New Roman';
+        background-color: chocolate;
+    }
+    nav
+    {
+        width: 100%;
+        height: 80px;
+        background: url("Cover Pic.png");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .navlinks
+    {
+        margin: 0px auto;
+        width: 80%;
+        height: 80px;
+        margin-top: 15px;
+        position: absolute;
+        margin-left: 160px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .navlinks a
+    {
+        text-decoration: none;
+        padding: 0px 40px 0px 40px;
+        font-size: 14px;
+        letter-spacing: 5px;
+        color: orangered;
+        font-family: "Sofia", sans-serif;
+    }
+    .navlinks a:hover
+    {
+        color: aqua;
+        font-size: 28px;
+    }
+    .navlinks .active
+    {
+        color: magenta;
+    }
+    .feedback-container
+    {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    form
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    label
+    {
+        margin-top: 10px;
+    }
+    input,textarea
+    {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    button
+    {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+    button:hover
+    {
+        background-color: purple;
+    }
+    .feedback-list
+    {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+    }
+    .feedback-item
+    {
+        border: 1px solid brown;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .review-box
+    {
+        background-color: aqua;
+        border: 1px solid lightgreen;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    footer
+    {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+</style>
+<body>
+    <nav>
+        <div class="navlinks">
+         <a href="index.html">HOME</a>
+         <a href="Images.html">OUR MENU</a>
+         <a href="Our Team.html">OUR TEAM</a>
+         <a class="active" href="Feedback.html">FEEDBACK</a>
+         <a href="Login Page.html">LOGIN</a>
+        </div> 
+    </nav>
+    <div class="feedback-container">
+        <br><br>
+        <h2>FEEDBACK</h2><br>
+        <p>We would love to hear from you! Please share your thoughts and suggestions below:</p><br>
+        <form id="feedbackform">
+            <label for="name">Your Name : </label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email : </label>
+            <input type="email" id="email" name="email" required>
+            <label for="feedback">Feedback : </label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+        <div id="live-preview" class="feedback-list">
+            <h3><center>LIVE FEEDBACK PREVIEW</center></h3>
+            <div id="feedback-preview-container">
+
+            </div>
+        </div>
+    </div><br><br><br>
+    <footer>
+        <p>&copy; 2023 Food Delivery App</p>
+    </footer>
+    <script>
+        function submitFeedback()
+        {
+            var nameInput=document.getElementById('name');
+            var emailInput=document.getElementById('email');
+            var feedbackInput=document.getElementById('feedback');
+
+            var name=nameInput.value || 'Your Name';
+            var feedback=feedbackInput.value;
+
+            var previewContainer=document.getElementById("feedback-preview-container");
+
+            reviewBox=document.createElement('div');
+            reviewBox.classList.add('feedback.item');
+            reviewBox.innerHTML= `
+                <div class="review-box">
+                    <strong>${name}</strong>
+                    <p>${feedback}</p>
+                </div> 
+            `;
+
+            previewContainer.appendChild(reviewBox);
+
+            nameInput.value="";
+            emailInput.value="";
+            feedbackInput.value="";
+        }
+    </script>
+</body>
+</html>

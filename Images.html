@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR MENU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    body
+    {
+        width: 100%;
+        height: auto;
+    }
+    nav
+    {
+        width: 100%;
+        height: 390px;
+        background: url("Cover Pic.png");
+        background-image: url("Cover Pic.png");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .navlinks
+    {
+        margin: 0px auto;
+        width: 80%;
+        height: 80px;
+        margin-top: 35px;
+        position: absolute;
+        margin-left: 160px;
+        text-align: center;
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .navlinks a
+    {
+        text-decoration: none;
+        padding: 0px 40px 0px 40px;
+        font-size: 14px;
+        letter-spacing: 5px;
+        color: orangered;
+        font-family: "Sofia", sans-serif;
+    }
+    .navlinks a:hover
+    {
+        color: aqua;
+        font-size: 28px;
+    }
+    .navlinks .active
+    {
+        color: magenta;
+    }
+    .food-row
+    {
+        width: 100%;
+        padding-top: 2em;
+        margin-top: 2em;
+        line-height: 3em;
+    }
+    .main-courses
+    {
+        margin: 20px auto;
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .item-col
+    {
+        line-height: 20px;
+        width: 30%;
+        height: 350px;
+        margin: 20px;
+        text-align: center;
+    }
+    .item-image img
+    {
+        width: 100%;
+        height: 140px;
+        border-radius: 50px;
+        box-shadow: 0px 4px 8px rgb(255, 0, 179,0.5);
+    }
+    .item-image img:hover
+    {
+        transition: transform 0.3s ease-in-out;
+        transition: scale(1,1);
+    }
+    .item-details
+    {
+        width: 100%;
+        height: 100px;
+    }
+    h4
+    {
+        color: blue;
+    }
+    h5
+    {
+        color: chocolate;
+    }
+    .order
+    {
+        height: 80px;
+        width: 150px;
+        font-size: 16px;
+        font-family: 'Times New Roman';
+        font-weight: bold;
+        background-color: orange;
+        border-radius: 50px;
+        border-color: violet;
+        color: green;
+        cursor: pointer;
+    }
+    .footer
+    {
+        background-color: black;
+        width: 100%;
+        height: 400px;
+        margin-top: 50px;
+        padding: 70px 0px;
+    }
+    body
+    {
+        line-height: 1.5;
+        font-family: 'Gill Sans';
+    }
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container
+    {
+        max-width: 1170px;
+        margin: auto;
+    }
+    .row
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ul
+    {
+        list-style: none;
+    }
+    .footer-col
+    {
+        width: 25%;
+        padding: 0px 15px;
+    }
+    .footer-col h4
+    {
+        font-size: 18px;
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-weight: 500px;
+    }
+    .footer-col ul,li,a
+    {
+        font-size: 18px;
+        text-transform: capitalize;
+        color: white;
+        text-decoration: none;
+        font-weight: 300px;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .footer-col ul,li,a:hover
+    {
+        color: orangered;
+        padding-left: 18px;
+    }
+    .footer-col .social-links a
+    {
+        display: inline-block;
+        height: 50px;
+        width: 40px;
+        background-color: black;
+        margin: 10px 10px 10px 0px;
+        text-align: center;
+        padding-top: 12px;
+        line-height: 40px;
+        border-radius: 50px;
+        color: white;
+    }
+    .footer-col .social-links a:hover
+    {
+        color: black;
+        background-color: white;
+    }
+</style>
+<body>
+    <nav>
+        <div class="navlinks">
+         <a href="index.html">HOME</a>
+         <a class="active" href="Images.html">OUR MENU</a>
+         <a href="Our Team.html">OUR TEAM</a>
+         <a href="Feedback.html">FEEDBACK</a>
+         <a href="Login Page.html">LOGIN</a>
+        </div> 
+    </nav>
+    <div class="food-row">
+        <center>
+            <h1>MAIN COURSES</h1>
+        </center>
+        <hr>
+        <div class="main-courses">
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Chicken Biriyani.png" alt="Chicken Biriyani"><br>
+                </div>
+                <div class="item-details">
+                    <h4>CHICKEN BIRIYANI</h4><br>
+                    <h5>$4.48</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Mandi.jpg" alt="Mandi"><br>
+                </div>
+                <div class="item-details">
+                    <h4>MANDI</h4><br>
+                    <h5>$2.86</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Mutton Biriyani.jpeg" alt="Mutton Biriyani"><br>
+                </div>
+                <div class="item-details">
+                    <h4>MUTTON BIRIYANI</h4><br>
+                    <h5>$3.10</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+        </div>
+     </div>
+    <div class="food-row"></div>
+        <center>
+            <h1>STARTER</h1>
+        </center>
+        <hr>
+        <div class="main-courses">
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Beetroot Roll.jpeg" alt="Beetroot Roll"><br>
+                </div>
+                <div class="item-details">
+                    <h4>BEETROOT ROLL</h4><br>
+                    <h5>$1.77</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Chicken Fry.jpg" alt="Chicken Fry"><br>
+                </div>
+                <div class="item-details">
+                    <h4>CHICKEN FRY</h4><br>
+                    <h5>$2.15</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Chicken Noodles.jpg" alt="Chicken Noddles"><br>
+                </div>
+                <div class="item-details">
+                    <h4>CHICKEN NOODLES</h4><br>
+                    <h5>$5.97</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="food-row"></div>
+        <center>
+            <h1>DESSERTS</h1>
+        </center>
+        <hr>
+        <div class="main-courses">
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Chocolate Ice Cream.jpg" alt="Chocolate Ice Cream"><br>
+                </div>
+                <div class="item-details">
+                    <h4>CHOCOLATE ICE CREAM</h4><br>
+                    <h5>$2.75</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Vanilla Ice Cream.jpg" alt="Vanilla Ice Cream"><br>
+                </div>
+                <div class="item-details">
+                    <h4>VANILLA ICE CREAM</h4><br>
+                    <h5>$4.66</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+            <div class="item-col">
+                <div class="item-image">
+                    <img src="Choco Vanilla Ice Cream Cake.jpg" alt="Choco Vanilla Ice Cream Cake"><br>
+                </div>
+                <div class="item-details">
+                    <h4>CHOCO VANILLA ICE CREAM CAKE</h4><br>
+                    <h5>$3.59</h5><br>
+                    <a href="Login Page.html">
+                        <button class="order">ORDER</button>
+                    </a> <br>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">OUR SERVICES</a></li>
+                        <li><a href="#">PRIVACY POLICY</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">DELIVERY ORDER</a></li>
+                        <li><a href="#">RETURNS</a></li>
+                        <li><a href="#">ORDER STATUS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>ONLINE FOOD ORDER</h4>
+                    <ul>
+                        <li><a href="#">MAIN COURSES</a></li>
+                        <li><a href="#">STARTERS</a></li>
+                        <li><a href="#">DESSERTS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FOLLOW US :</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

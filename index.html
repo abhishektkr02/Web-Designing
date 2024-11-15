@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<style>
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    body
+    {
+        padding: 0px;
+        width: 100%;
+        height: auto;
+        background: url("Cover Pic.png");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .navlinks
+    {
+        width: 80%;
+        height: 80px;
+        margin-top: 35px;
+        position: absolute;
+        margin-left: 160px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .navlinks a
+    {
+        text-decoration: none;
+        padding: 0px 40px 0px 40px;
+        font-size: 14px;
+        letter-spacing: 5px;
+        color: orangered;
+        font-family: "Sofia", sans-serif;
+    }
+    .navlinks a:hover
+    {
+        color: aqua;
+        font-size: 28px;
+    }
+    .navbutton
+    {
+        width: 200px;
+        height: 60px;
+        background-color: gold;
+        position: absolute;
+        margin-top: 500px;
+        margin-left: 310px;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        text-align: center;
+    }
+    .navbutton :hover
+    {
+        background-color: red;
+    }
+    .navbutton h3
+    {
+        margin-top: 20px;
+        font-size: 16px;
+        letter-spacing: 5px;
+        color: green;
+        font-family:'Times New Roman';
+    }
+    .navbutton h3:hover
+    {
+        color: white;
+        font-size: 18px;
+    }
+    .navlinks .active
+    {
+        color: magenta;
+    }
+</style>
+<body>
+    <nav>
+       <div class="navlinks">
+        <a class="active" href="index.html">HOME</a>
+        <a href="Images.html">OUR MENU</a>
+        <a href="Our Team.html">OUR TEAM</a>
+        <a href="Feedback.html">FEEDBACK</a>
+        <a href="Login Page.html">LOGIN</a>
+       </div> 
+    </nav>
+    <a href="Images.html">
+        <div class="navbutton">
+            <h3>TASTE NOW</h3>
+        </div>
+    </a>
+</body>
+</html>
